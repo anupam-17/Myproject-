@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>The time</title>
+        <link href="projectstylesheet.css" rel="stylesheet">
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+        <link href="jquery-ui/jquery-ui.structure.css" rel="stylesheet">
+        <link href="jquery-ui/jquery-ui.theme.css" rel="stylesheet">
+
+        
+        
+    
+
+<script src="jquery.js"></script>
+<script src="jquery-ui/jquery-ui.js" type="text/javascipt"></script>
+<script>
+    var second=1;
+    function print1()
+    {
+         document.getElementById("op").innerHTML=second + "seconds";second++;
+    
+    }
+    function start()
+    {
+         x= window.setInterval(print1,1000);
+         document.getElementById("op").style.color="green";
+         document.getElementById("btn1").style.color="red";
+         document.getElementById("btn1").style="red";
+        
+    }
+    
+    function stop()
+    {
+        window.clearInterval(x);
+        document.getElementById("op").style.color="red";
+        document.getElementById("btn1").innerText="Resume";
+        $("#btn1").fadeToggle(2000);
+        
+    
+    }
+    function clear1()
+    {
+        document.getElementById("op").innerHTML=second*0 +"second";
+        document.getElementById("op").style.color="black";
+        location.reload();
+    }
+</script>
+</head>
+<body>
+    <div id="div1">
+    <h1 >THE BASIC STOP WATCH</h1>
+    <h2 id="op">0 second</h2>
+    <button id ="btn1" onclick="start()" width="200px">Start</button>
+    <button id ="btn2" onclick="stop()">Stop</button>
+    <button id ="btn3" onclick="clear1()">Reset</button>
+    </div>
+</body>
+
+
+
+
+
+</html>
